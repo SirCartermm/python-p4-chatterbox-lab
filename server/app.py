@@ -1,8 +1,14 @@
-from flask import Flask, request, make_response, jsonify
-from flask_cors import CORS
-from flask_migrate import Migrate
+from flask import Flask, request, make_response, jsonify # type: ignore
+from flask_cors import CORS # type: ignore
+from flask_migrate import Migrate # type: ignore
 
 from models import db, Message
+from flask import Flask, request, jsonify # type: ignore
+from flask_cors import CORS # type: ignore
+from models import Message
+
+app = Flask(__name__)
+CORS(app)
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
